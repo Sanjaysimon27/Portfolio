@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../BG images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "website",
+		"liveServer.settings.port": 5501
+	}
+}
