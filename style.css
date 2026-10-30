@@ -943,11 +943,34 @@ body {
   transform: rotate(180deg);
 }
 
-/* Submit Row with Elongated Pill Button */
+/* Submit Row with Pill Button & Status Notification */
 .form-submit-row {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 48px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.form-status {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: fadeInStatus 0.3s ease;
+}
+
+.form-status.status-success {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+}
+
+.form-status.status-error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
 }
 
 .btn-submit-pill {
@@ -961,16 +984,55 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-submit-pill:hover {
+.btn-submit-pill:hover:not(:disabled) {
   background: #ffffff;
   color: #000000;
   border-color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25);
+}
+
+.btn-submit-pill:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-submit-arrow {
+  display: flex;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+.btn-submit-pill:hover:not(:disabled) .btn-submit-arrow {
+  transform: translate(2px, -2px);
+}
+
+.btn-submit-spinner {
+  display: flex;
+  align-items: center;
+}
+
+.spin {
+  animation: spinRotate 1s linear infinite;
+}
+
+@keyframes spinRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInStatus {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* -------------------------------------------------------------

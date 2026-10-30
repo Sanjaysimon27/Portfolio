@@ -1,0 +1,21 @@
+{
+  "name": "folioblox-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website with smooth canvas scroll and contact form powered by Nodemailer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "nodemailer",
+    "gmail"
+  ],
+  "author": "Sanjay",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "nodemailer": "^10.3.1"
+  }
+}
